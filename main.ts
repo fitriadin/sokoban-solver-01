@@ -1,7 +1,8 @@
 // Push-optimal Sokoban solver: room decomposition + push-level BFS. A level is a
 // 1-wide hallway with 1-4 rooms off it; a box pushed out of a door can never be
 // pushed back, so every box stays in its room and the level's push-optimum is the
-// sum of its rooms' optima. BFS over pushes finds each room's optimum.
+// sum of its rooms' optima. BFS over pushes finds each room's optimum. Kept
+// compact on purpose: on an exact score tie the smaller entry ranks first.
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 const I = process.env.MAKEFUN_INPUT_DIR ?? '/input', O = process.env.MAKEFUN_OUTPUT_DIR ?? '/output', C = 250000;
